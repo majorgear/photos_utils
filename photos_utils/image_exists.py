@@ -13,9 +13,7 @@ def create_arguments():
 
 def main():
     args = create_arguments()
-    # image_name = "90.jpeg"
     photosdb = osxphotos.PhotosDB()    
-    # photosdb = osxphotos.PhotosDB(osxphotos.utils.get_last_library_path())    
     results =  [ photo for photo in photosdb.photos( movies=False, images=True ) if photo.original_filename == args.image_name ]
     if results:
         print("File exists in library")
@@ -23,7 +21,6 @@ def main():
     else:
         print("File does not exist in library")
         return 1
-    # print(results)
     return    
 
 
